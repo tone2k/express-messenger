@@ -1,0 +1,9 @@
+language: node_js
+node_js: node
+deploy:
+  provider: heroku
+  api_key:
+    secure: Vsd5cVuGTWRVtnliEBg5ULGMxdBr8EpGTQz+zrf4BQXGxtKPtUE8yCPE64jjRG+0cYP1zRW/Ly1/lvYoj2F9ORSNTCeiLRZ6+llid+ighdSh0DM9MSnDEGHnvLhZJYK8BtC4MyExMuvwxKKzsapikCmRUVJHFFQF6MvrmhocNvdyMEjImfPfoFqIVvBDAvzVFuWjhuTeG3RclWJH3c5ts4UP82PEE08IAlFu3Iw7d/dK1BtZVZR8B6fS7EOE0hPYedW+8U3ocDF9H+HVXrBv/4YrePTKVrRGBAuatqaUeCKhG651YOpjFbG20bkp8OllkOi9HORY4n6UMFgIoeHCWnIH9EoP+aYIF9GTTYXWQKaoEieRJO2EKHkwLgcYYZvpn16apLwaTpj2Ve+PGGxdGtTXTG3Hq45ppkL6AEw++9Z3rDBDV1p1dikSjuSCfM42jEo58FFZBIhNfIeCFXC197x4cIN8EEumO/+KY0MJEC8b1YWd9niWY6vYeLJrLgiyWIm8zrwJKPT8o3ZPcDqfQi8EaImDalVaoJxr3J9J+F/H6mPvm3nYM5o/rFiOiR65yWWI0KGJyh9I+obRSOe4Nn9FoTETfAsBwvdyWW/ISynmk+XfmTzx7aAT1u37AZM9Brmu0QXPmwC6RpDPxp/g77KRdFRbHf/yYw6r7wJoTyo=
+  app: rocky-refuge-49694
+  on:
+    repo: tone2k/express-messenger
