@@ -6,8 +6,8 @@ const morgan = require('morgan');
 const passport = require('passport');
 const bodyParser = require('body-parser')
 const app = express();
-const http = require('http').Server(app)
-const io = require('socket.io')(http)
+// const http = require('http').Server(app)
+// const io = require('socket.io')(http)
 
 const { router: usersRouter } = require('./users');
 const { router: authRouter, localStrategy, jwtStrategy } = require('./auth');
@@ -46,10 +46,6 @@ app.get('/api/protected', jwtAuth, (req, res) => {
     return res.json({
         data: 'rosebud'
     });
-});
-
-app.use('*', (req, res) => {
-    return res.status(404).json({ message: 'Not Found' });
 });
 
 const Message = mongoose.model('Message', {
@@ -101,9 +97,14 @@ app.post('/messages', async (req, res) => {
     }
 })
 
-io.on('connection', (socket) => {
-    console.log('user connected!')
-})
+app.use('*', (req, res) => {
+    return res.status(404).json({
+        message: 'Not Found'
+    });
+});
+// io.on('connection', (socket) => {
+//     console.log('user connected!')
+// })
 
 // Referenced by both runServer and closeServer. closeServer
 // assumes runServer has run and set `server` to a server object
