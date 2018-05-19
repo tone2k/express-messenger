@@ -61,7 +61,7 @@ app.get('/messages', (req, res) => {
     Message.find()
     .then(messages =>{
         res.status(200).json(messages)
-    }
+    })
 });
 
 app.get('/messages:user', (req, res) => {
