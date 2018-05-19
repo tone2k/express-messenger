@@ -20,6 +20,8 @@ const { PORT, DATABASE_URL } = require('./config');
 // Logging
 app.use(morgan('common'));
 
+app.use(express.static('public'));
+
 // CORS
 app.use(function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
@@ -56,10 +58,11 @@ const Message = mongoose.model('Message', {
 })
 
 app.get('/messages', (req, res) => {
-    Message.find({}, (err, messages) => {
-        res.send(messages)
-    })
-})
+    Message.find()
+    .then(messages =>{
+        res.status(200).json(messages)
+    }
+});
 
 app.get('/messages:user', (req, res) => {
     const user = req.params.user
