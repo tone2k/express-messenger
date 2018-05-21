@@ -6,8 +6,7 @@ const morgan = require('morgan');
 const passport = require('passport');
 const bodyParser = require('body-parser')
 const app = express();
-// const http = require('http').Server(app)
-// const io = require('socket.io')(http)
+
 
 const { router: usersRouter } = require('./users');
 const { router: authRouter, localStrategy, jwtStrategy } = require('./auth');
