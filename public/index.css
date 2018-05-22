@@ -1,0 +1,105 @@
+body {
+    background-color: rgb(255, 139, 30);
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Hind', sans-serif;
+}
+
+header .logo {
+    display: block;
+    margin-top: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100px;
+    width: auto;
+    margin-bottom: 20px;
+}
+
+form {
+    /*position: absolute;*/
+    background-color: white;
+    width: 400px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 5px;
+    overflow: auto;
+}
+
+div {
+    color: grey;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 1px;
+    font-weight: lighter;
+}
+
+fieldset {
+    width: 360px;
+    border: none;
+    font-weight: bold;
+    display: block;
+    margin: 0 auto;
+}
+
+legend {
+    float: left;
+    font-size: 20px;
+    color: black;
+}
+
+input {
+    background-color: ghostwhite;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 15px;
+    height: 25px;
+    width: 325px;
+    border-radius: 5px;
+    border: 2px solid lightgrey;
+    font-size: 20px;
+}
+
+button {
+    font-size: 24px;
+    color: white;
+    width: 360px;
+    height: 50px;
+    background-color: limegreen;
+    border: none;
+    border-radius: 5px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 70px;
+    float: right;
+}
+
+button:hover {
+    background-color: forestgreen;
+}
+
+.return {
+    margin-top: 0px;
+    font-size: 20px;
+    color: white;
+}
+
+img {
+    height: 60px;
+}
+
+.jumbotron {
+    background: white;
+}
+
+.form-control {
+    background: ghostwhite;
+}
+
+.label {
+    font-size: 20px;
+    float: left;
+    color: black;
+}

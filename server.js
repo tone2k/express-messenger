@@ -6,7 +6,8 @@ const morgan = require('morgan');
 const passport = require('passport');
 const bodyParser = require('body-parser')
 const app = express();
-
+const http = require('http').Server(app)
+const io = require('socket.io')(http)
 
 const { router: usersRouter } = require('./users');
 const { router: authRouter, localStrategy, jwtStrategy } = require('./auth');
@@ -15,6 +16,12 @@ const { router: authRouter, localStrategy, jwtStrategy } = require('./auth');
 mongoose.Promise = global.Promise;
 
 const { PORT, DATABASE_URL } = require('./config');
+
+app.use(express.static(__dirname))
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({
+    extended: false
+}))
 
 // Logging
 app.use(morgan('common'));
@@ -101,9 +108,9 @@ app.use('*', (req, res) => {
         message: 'Not Found'
     });
 });
-// io.on('connection', (socket) => {
-//     console.log('user connected!')
-// })
+io.on('connection', (socket) => {
+    console.log('user connected!')
+})
 
 // Referenced by both runServer and closeServer. closeServer
 // assumes runServer has run and set `server` to a server object
