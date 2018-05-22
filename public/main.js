@@ -1,3 +1,5 @@
+let socket = io();
+
 $(() => {
     $('#send').click(() => {
         const message = {
@@ -11,8 +13,11 @@ $(() => {
     getMessages();
 })
 
+socket.on('message', addMessages);
+
 function addMessages(message) {
-    $('#messages').append(`<h4> ${message.name} </h4> <p> ${message.message} </p>`)
+    $('#messages').show();
+    $('#messages').append(`<div class="message"><h4> ${message.name} </h4> <h5> &nbsp; <i>${message.message}</i><a href="#"><img src="trash.png" class="trash"></a></h5><div>`)
 }
 
 function getMessages() {

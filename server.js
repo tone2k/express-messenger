@@ -122,7 +122,7 @@ function runServer() {
             if (err) {
                 return reject(err);
             }
-            server = app
+            server = http
                 .listen(PORT, () => {
                     console.log(`Your app is listening on port ${PORT}`);
                     resolve();
