@@ -17,7 +17,7 @@ socket.on('message', addMessages);
 
 function addMessages(message) {
     $('#messages').show();
-    $('#messages').append(`<div class="message"><h4> ${message.name} </h4> <h5> &nbsp; <i>${message.message}</i><a href="#"><img src="trash.png" class="trash"></a></h5><div>`)
+    $('#messages').append(`<div class="speech-bubble"><h4> ${message.name} </h4> <h5> &nbsp; <i>${message.message}</i><a href="#"><img src="trash.png" class="trash"></a></h5><div>`)
 }
 
 function getMessages() {
