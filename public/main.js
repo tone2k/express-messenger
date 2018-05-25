@@ -17,8 +17,21 @@ socket.on('message', addMessages);
 
 function addMessages(message) {
     $('#messages').show();
-    $('#messages').append(`<div class="speech-bubble"><h4> ${message.name} </h4> <h5> &nbsp; <i>${message.message}</i><a href="#"><img src="trash.png" class="trash"></a></h5><div>`)
+    $('#messages').empty();
+    $('#messages').append(
+        `<div data-id="${message._id}" class="speech-bubble">
+            <h4> ${message.name} </h4> 
+            <h5> &nbsp; <i>${message.message}</i>
+                <img data-id="test" src="trash.png" class="trash">
+            </h5>
+        <div>`)
 }
+
+$(document).on('click', '.trash', function() {
+    let id = $(this).parent().parent().attr('data-id')
+    deleteMessage(id);
+    getMessages();
+})
 
 function getMessages() {
     $.get('http://localhost:8080/messages', (data) => {
@@ -28,4 +41,11 @@ function getMessages() {
 
 function postMessages(message) {
     $.post('http://localhost:8080/messages', message)
+}
+
+function deleteMessage(id) {
+    $.ajax({
+        url: `http://localhost:8080/messages/${id}`,
+        type: 'DELETE'
+    })
 }

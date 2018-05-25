@@ -75,6 +75,8 @@ app.get('/messages:user', (req, res) => {
     })
 })
 
+
+
 app.post('/messages', async (req, res) => {
 
     try {
@@ -103,11 +105,19 @@ app.post('/messages', async (req, res) => {
     }
 })
 
+app.delete('/messages/:id', (req, res) => {
+    Message.findByIdAndRemove(req.params.id)
+    .then(res.status(204).end())
+    console.log(`Deleted message post with id \`${req.params.ID}\``);
+});
+
 app.use('*', (req, res) => {
     return res.status(404).json({
         message: 'Not Found'
     });
 });
+
+
 io.on('connection', (socket) => {
     console.log('user connected!')
 })
