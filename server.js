@@ -4,10 +4,11 @@ const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 const passport = require('passport');
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
 const app = express();
 const http = require('http').Server(app)
 const io = require('socket.io')(http)
+
 
 const { router: usersRouter } = require('./users');
 const { router: authRouter, localStrategy, jwtStrategy } = require('./auth');
@@ -21,7 +22,7 @@ app.use(express.static(__dirname))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
     extended: false
-}))
+}));
 
 // Logging
 app.use(morgan('common'));

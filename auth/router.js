@@ -41,11 +41,6 @@ router.post('/refresh', jwtAuth, (req, res) => {
     });
 });
 
-router.delete('/:id', (req, res) => {
-    message.delete(req.params.id);
-    console.log(`Deleted message post with id \`${req.params.ID}\``);
-    res.status(204).end();
-});
 
 
 module.exports = {
