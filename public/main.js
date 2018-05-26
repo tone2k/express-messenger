@@ -33,18 +33,18 @@ $(document).on('click', '.trash', function() {
 })
 
 function getMessages() {
-    $.get('http://localhost:8080/messages', (data) => {
+    $.get('/messages', (data) => {
         data.forEach(addMessages);
     })
 }
 
 function postMessages(message) {
-    $.post('http://localhost:8080/messages', message)
+    $.post('/messages', message)
 }
 
 function deleteMessage(id) {
     $.ajax({
-        url: `http://localhost:8080/messages/${id}`,
+        url: `/messages/${id}`,
         type: 'DELETE'
     })
 }
