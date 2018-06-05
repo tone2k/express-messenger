@@ -9,11 +9,11 @@ I was super interested in socket.io and wanted to gain more familiarity around i
 ## Screenshots
 Landing Page:
 
-![start screen](screenshots/screenshot1.png)
+![start screen](screenshot1.png)
 
 Messages post:
 
-![post](screenshots/screenshot2.png)
+![post](screenshot2.png)
 
 
 ## Summary & Technology Used
