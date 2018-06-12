@@ -108,6 +108,7 @@ p {
 }
 
 .jumbotron {
+    display: none;
     background: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7),
     0 6px 20px 0 rgba(0, 0, 0, 0.68);
@@ -208,4 +209,9 @@ p {
     top: 0px;
     right: 0px;
     height: 120px;
+}
+
+.signup-form {
+    float: left;
+    /* display: none; */
 }

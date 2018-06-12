@@ -14,14 +14,14 @@ $(() => {
 })
 
 socket.on('message', addMessages);
+socket.on('delete', getMessages);
+
 
 function addMessages(message) {
-    $('#messages').show();
-    // $('#messages').empty();
     $('#messages').append(
         `<div data-id="${message._id}" class="speech-bubble">
             <h4> ${message.name} </h4> 
-            <p> &nbsp; <i>${message.message}</i>
+            <p><i>${message.message}</i>
                 <img data-id="test" src="trash.png" class="trash">
             </p>
         <div>`)
@@ -30,9 +30,12 @@ function addMessages(message) {
 $(document).on('click', '.trash', function() {
     let id = $(this).parent().parent().attr('data-id')
     deleteMessage(id);
+    getMessages();
 })
 
 function getMessages() {
+    $('#messages').empty();
+    $('#messages').show();
     $.get('/messages', (data) => {
         data.forEach(addMessages);
     })

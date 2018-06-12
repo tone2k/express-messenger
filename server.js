@@ -107,9 +107,12 @@ app.post('/messages', async (req, res) => {
 })
 
 app.delete('/messages/:id', (req, res) => {
+    console.log(`Deleting message post with id \`${req.params.id}\``);
     Message.findByIdAndRemove(req.params.id)
-    .then(res.status(204).end())
-    console.log(`Deleted message post with id \`${req.params.ID}\``);
+    .then(() =>{
+        io.emit('delete');
+        res.status(204).end()
+    });
 });
 
 app.use('*', (req, res) => {
