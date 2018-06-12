@@ -6,7 +6,7 @@ $(() => {
             name: $('#name').val(),
             message: $('#message').val()
         }
-        $('#name').val('')
+        // $('#name').val('')
         $('#message').val('')
         postMessages(message);
     });
@@ -51,3 +51,8 @@ function deleteMessage(id) {
         type: 'DELETE'
     })
 }
+
+$(document).on('click', '#myBtn', function () {
+   $('#mainpage').show();
+   $('#signup').hide();
+})

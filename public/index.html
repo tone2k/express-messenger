@@ -28,7 +28,7 @@
         <img src="chat1.png" class="logo" alt="Message Logo">
     </header>
     <div class="container">
-        <form class="jumbotron">
+        <form id="mainpage" class="jumbotron">
             <h1 class="display-4">Express &nbsp; Messenger</h1>
         
             <label class="label">Person, Place or Thing</label>
@@ -38,17 +38,17 @@
             <br>
             <button id="send">Send</button>
         </form>
-        <form class="signup-form" action="/signup/">
+        <form id="signup" class="signup-form" action="/signup/">
             <div class="display-4">Sign Up</div>
             <fieldset>
                 <div>
-                    <legend for="email">Email</legend>
+                    <legend id="email" for="email">Username</legend>
                     <input for="email" type="email" name="email" placeholder="foo@bar.com" required>
-                    <legend for="passowrd">Password</legend>
+                    <legend id="password" for="password">Password</legend>
                     <input for="password" type="password" name="password" placeholder='1234Passw0rd!' required>
                 </div>
             </fieldset>
-            <button for="signup" type="button">Sign up</button>
+            <button id="myBtn" for="signup" type="button">Sign up</button>
         </form>
         <div id="messages" class="jumbotron">
             <img src="express.png" class="express" alt="express yourself">

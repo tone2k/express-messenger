@@ -215,3 +215,8 @@ p {
     float: left;
     /* display: none; */
 }
+
+#email, #password {
+    font-size: 25px;
+    margin: 0px;
+}
