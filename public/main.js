@@ -52,7 +52,13 @@ function deleteMessage(id) {
     })
 }
 
-$(document).on('click', '#myBtn', function () {
+function loginUser() {
+    $('')
+}
+
+$(document).on('submit', '#login', function (e) {
+    e.preventDefault();
    $('#mainpage').show();
    $('#signup').hide();
+   $('#login').hide();
 })

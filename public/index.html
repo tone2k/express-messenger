@@ -38,17 +38,29 @@
             <br>
             <button id="send">Send</button>
         </form>
+        <form id="login" class="login-form" action="/login/">
+            <div class="display-4">Log In</div>
+            <fieldset>
+                <div>
+                    <legend for="loginUsername">Username</legend>
+                    <input id="loginUsername" type="email" name="email" placeholder="foo@bar.com" required>
+                    <legend for="loginPassword">Password</legend>
+                    <input id="loginPassword" type="password" name="password" placeholder='1234Passw0rd!' required>
+                </div>
+            </fieldset>
+            <button id="loginBtn" type="submit">Login</button>
+        </form>
         <form id="signup" class="signup-form" action="/signup/">
             <div class="display-4">Sign Up</div>
             <fieldset>
                 <div>
-                    <legend id="email" for="email">Username</legend>
-                    <input for="email" type="email" name="email" placeholder="foo@bar.com" required>
-                    <legend id="password" for="password">Password</legend>
-                    <input for="password" type="password" name="password" placeholder='1234Passw0rd!' required>
+                    <legend for="signupUsername">Username</legend>
+                    <input id="signupUsername" type="email" name="email" placeholder="foo@bar.com" required>
+                    <legend for="signupPassword">Password</legend>
+                    <input id="signupPassword" type="password" name="password" placeholder='1234Passw0rd!' required>
                 </div>
             </fieldset>
-            <button id="myBtn" for="signup" type="button">Sign up</button>
+            <button id="signupBtn" type="submit">Sign Up</button>
         </form>
         <div id="messages" class="jumbotron">
             <img src="express.png" class="express" alt="express yourself">

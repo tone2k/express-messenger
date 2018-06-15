@@ -213,7 +213,7 @@ p {
 
 .signup-form {
     float: left;
-    /* display: none; */
+    display: none;
 }
 
 #email, #password {
