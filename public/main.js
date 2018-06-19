@@ -53,7 +53,17 @@ function deleteMessage(id) {
 }
 
 function loginUser() {
-    $('')
+    let user = {};
+    user.username = $('#loginUsername').val();
+    user.password = $('#loginPassword').val();
+    $.ajax({
+        type: 'POST',
+        url: '/api/auth/login/',
+        data: JSON.stringify(user),
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    });
 }
 
 $(document).on('submit', '#login', function (e) {
