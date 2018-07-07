@@ -21,6 +21,7 @@
 </head>
 
 <body>
+    <div class="error-message"></div>
     <div id="content">
         <img src="node.png" alt="node logo"/>
     </div>
@@ -42,13 +43,14 @@
             <div class="display-4">Log In</div>
             <fieldset>
                 <div>
-                    <legend for="loginUsername">Username</legend>
+                    <label for="loginUsername">Username</label>
                     <input id="loginUsername" type="email" name="email" placeholder="foo@bar.com" required>
-                    <legend for="loginPassword">Password</legend>
+                    <label for="loginPassword">Password</label>
                     <input id="loginPassword" type="password" name="password" placeholder='1234Passw0rd!' required>
                 </div>
             </fieldset>
             <button id="loginBtn" type="submit">Login</button>
+            <a href="#" id="newAcct">Create New Account</a>
         </form>
         <form id="signup" class="signup-form" action="/signup/">
             <div class="display-4">Sign Up</div>
@@ -64,7 +66,6 @@
         </form>
         <div id="messages" class="jumbotron">
             <img src="express.png" class="express" alt="express yourself">
-
         </div>
     </div>
 
