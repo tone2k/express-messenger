@@ -205,15 +205,15 @@ p {
     position: relative;
 }
 
-#content img {
+#content #node {
     position: absolute;
     top: 0px;
-    right: 0px;
+    right: 65px;
     height: 120px;
 }
 
 .signup-form {
-    float: left;
+    float: center;
     display: none;
 }
 
@@ -224,4 +224,11 @@ p {
 
 #newAcct {
     padding-bottom: 15px;
+}
+
+#socket {
+    height: 75px;
+    position: absolute;
+    top: 28px;
+    right: 0px;
 }
