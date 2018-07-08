@@ -110,10 +110,14 @@ $(document).on('submit', '#signup', function (e) {
     // Store the user info 
     let username = $('#signupUsername').val();
     let password = $('#signupPassword').val();
+    let firstName = $('#signupFirstName').val();
+    let lastName = $('#signupLastName').val();
 
     const user = {
       username,
-      password
+      password,
+      firstName,
+      lastName
     };
 
     $.ajax({
