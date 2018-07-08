@@ -22,12 +22,13 @@ form {
     margin-right: auto;
     margin-left: auto;
     border-radius: 5px;
-    overflow: auto;
+    padding-bottom: 10px;
+    /* overflow: unset; */
 }
 
 div {
     color: grey;
-    font-size: 40px;
+    /* font-size: 40px; */
     text-align: center;
     margin-top: 25px;
     margin-bottom: 1px;
@@ -35,7 +36,7 @@ div {
 }
 
 form {
-    width: 100%;
+    width: 70%;
 }
 
 fieldset {
@@ -76,7 +77,7 @@ button {
     display: block;
     margin-right: auto;
     margin-left: auto;
-    margin-bottom: 70px;
+    margin-bottom: 30px;
 }
 
 button:hover {
@@ -119,8 +120,8 @@ p {
 }
 
 .label {
-    font-size: 20px;
-    float: left;
+    font-size: 25px;
+    float: center;
     color: black;
 }
 
@@ -219,4 +220,8 @@ p {
 #email, #password {
     font-size: 25px;
     margin: 0px;
+}
+
+#newAcct {
+    padding-bottom: 15px;
 }
