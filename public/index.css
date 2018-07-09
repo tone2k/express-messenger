@@ -163,13 +163,13 @@ p {
 .speech-bubble {
     position: relative;
     width: 93%;
-    padding: 10px;
-    margin: 3em;
+    /* padding: 10px; */
+    /* margin: 3em; */
     background-color: ghostwhite;
     color: #666;
     font: normal 12px "Segoe UI", Arial, Sans-serif;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
+    /* -moz-border-radius: 10px;
+    -webkit-border-radius: 10px; */
     border-radius: 10px;
     border: 10px solid #0077C3;
     margin-bottom: 5%;
@@ -215,6 +215,13 @@ p {
 .signup-form {
     float: center;
     display: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7),
+    0 6px 20px 0 rgba(0, 0, 0, 0.68);
+}
+
+.login-form{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7),
+    0 6px 20px 0 rgba(0, 0, 0, 0.68);
 }
 
 #email, #password {
@@ -231,4 +238,22 @@ p {
     position: absolute;
     top: 28px;
     right: 0px;
+}
+
+#name {
+    width: 200px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#message {
+     background-color: ghostwhite;
+     margin-top: 10px;
+     margin-bottom: 30px;
+     padding: 15px;
+     height: 25px;
+     width: 325px;
+     border-radius: 5px;
+     border: 2px solid lightgrey;
+     font-size: 20px;
 }
