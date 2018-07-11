@@ -126,7 +126,7 @@ p {
 }
 
 #messages {
-    display: none;
+    /* display: none; */
     text-align: center;
 }
 
@@ -256,4 +256,8 @@ p {
      border-radius: 5px;
      border: 2px solid lightgrey;
      font-size: 20px;
+}
+
+#express {
+    display: block;
 }
