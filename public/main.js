@@ -9,6 +9,7 @@ $(() => {
         // $('#name').val('')
         $('#message').val('')
         postMessages(message);
+        console.log(JSON.stringify(message));
     });
     getMessages();
 })
@@ -35,21 +36,47 @@ $(document).on('click', '.trash', function() {
 function getMessages() {
     $('#messages').empty();
     $('#messages').show();
-    $.get('/messages', (data) => {
+    let token = localStorage.getItem('authToken');
+    $.ajax({
+        url: '/messages',
+        type: 'GET',
+        headers: {
+            "Authorization": 'Bearer ' + token
+        },
+        dataType: 'JSON'
+    })
+    .done(data => {
         data.forEach(addMessages);
     })
 }
 
 function postMessages(message) {
-    $.post('/messages', message)
+    let token = localStorage.getItem('authToken');
+    $.ajax({
+        url: '/messages',
+        type: 'POST',
+        data: JSON.stringify(message),
+        headers: {
+            "Authorization": 'Bearer ' + token
+        },
+        dataType: 'JSON'
+    })
+    .done(data => {
+        console.log(message);
+    })
 }
 
 function deleteMessage(id) {
+    let token = localStorage.getItem('authToken');
     $.ajax({
         url: `/messages/${id}`,
-        type: 'DELETE'
+        type: 'DELETE',
+        headers: {
+            "Authorization": 'Bearer ' + token
+        }
     })
 }
+
 
 function loginUser() {
     let user = {};

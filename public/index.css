@@ -126,7 +126,7 @@ p {
 }
 
 #messages {
-    /* display: none; */
+    display: none;
     text-align: center;
 }
 

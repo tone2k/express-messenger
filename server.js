@@ -60,14 +60,14 @@ const Message = mongoose.model('Message', {
     message: String
 })
 
-app.get('/messages', (req, res) => {
+app.get('/messages', jwtAuth, (req, res) => {
     Message.find()
     .then(messages =>{
         res.status(200).json(messages)
     })
 });
 
-app.get('/messages:user', (req, res) => {
+app.get('/messages:user', jwtAuth, (req, res) => {
     const user = req.params.user
     Message.find({
         name: user
@@ -78,7 +78,7 @@ app.get('/messages:user', (req, res) => {
 
 
 
-app.post('/messages', async (req, res) => {
+app.post('/messages', jwtAuth, async (req, res) => {
 
     try {
         const message = new Message(req.body)
@@ -106,7 +106,7 @@ app.post('/messages', async (req, res) => {
     }
 })
 
-app.delete('/messages/:id', (req, res) => {
+app.delete('/messages/:id', jwtAuth, (req, res) => {
     console.log(`Deleting message post with id \`${req.params.id}\``);
     Message.findByIdAndRemove(req.params.id)
     .then(() =>{
