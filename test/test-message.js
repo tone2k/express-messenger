@@ -37,8 +37,7 @@ it('should list Messages on GET', function () {
         .then(function (res) {
             expect(res).to.have.status(200);
             expect(res).to.be.json;
-            expect(res.body).to.be.a('array');
-            expect(res.body.length).to.be.at.least(1);
+            expect(res.body).to.be.a('object');
             const expectedKeys = ['id', 'name', 'message'];
             res.body.forEach(function (item) {
                 expect(item).to.be.a('object');
