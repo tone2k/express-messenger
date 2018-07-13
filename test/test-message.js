@@ -17,15 +17,6 @@ const expect = chai.expect;
 chai.use(chaiHttp);
 
 describe('/messages', function () {
-            const username = 'exampleUser';
-            const password = 'examplePass';
-            const firstName = 'Example';
-            const lastName = 'User';
-            const usernameB = 'exampleUserB';
-            const passwordB = 'examplePassB';
-            const firstNameB = 'ExampleB';
-            const lastNameB = 'UserB';
-
             before(function () {
                 return runServer();
             });
@@ -37,5 +28,41 @@ describe('/messages', function () {
             beforeEach(function () {});
 
             afterEach(function () {
-                return User.remove({});})
+                return message.remove({});})
+});
+
+it('should list Messages on GET', function () {
+    return chai.request(app)
+        .get('/messages')
+        .then(function (res) {
+            expect(res).to.have.status(200);
+            expect(res).to.be.json;
+            expect(res.body).to.be.a('array');
+            expect(res.body.length).to.be.at.least(1);
+            const expectedKeys = ['id', 'name', 'message'];
+            res.body.forEach(function (item) {
+                expect(item).to.be.a('object');
+                expect(item).to.include.keys(expectedKeys);
+            });
+        });
+});
+
+it('should add a message on POST', function () {
+    const newMessage = {
+        name: 'Jake',
+        message: 'The Earth is our home',
+    };
+    return chai.request(app)
+        .post('/message')
+        .send(newMessage)
+        .then(function (res) {
+            expect(res).to.have.status(201);
+            expect(res).to.be.json;
+            expect(res.body).to.be.a('object');
+            expect(res.body).to.include.keys('id', 'name', 'message');
+            expect(res.body.id).to.not.equal(null);
+            expect(res.body).to.deep.equal(Object.assign(newMessage, {
+                id: res.body.id
+            }));
+        });
 });
