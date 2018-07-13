@@ -52,7 +52,7 @@ it('should add a message on POST', function () {
         message: 'The Earth is our home',
     };
     return chai.request(app)
-        .post('/message')
+        .post('/messages')
         .send(newMessage)
         .then(function (res) {
             expect(res).to.have.status(201);
@@ -63,5 +63,17 @@ it('should add a message on POST', function () {
             expect(res.body).to.deep.equal(Object.assign(newMessage, {
                 id: res.body.id
             }));
+        });
+});
+
+it('should delete message on DELETE', function () {
+    return chai.request(app)
+        .get('/messages')
+        .then(function (res) {
+            return chai.request(app)
+                .delete(`/messages/${res.body[0].id}`);
+        })
+        .then(function (res) {
+            expect(res).to.have.status(204);
         });
 });
