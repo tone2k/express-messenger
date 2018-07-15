@@ -97,7 +97,7 @@ app.post('/messages', jwtAuth, async (req, res) => {
         else
             io.emit('message', req.body)
 
-        res.sendStatus(200)
+        res.sendStatus(201)
     } catch (error) {
         res.sendStatus(500)
         return console.error(error)
