@@ -9,7 +9,7 @@ $(() => {
         // $('#name').val('')
         $('#message').val('')
         postMessages(message);
-        console.log(JSON.stringify(message));
+        console.log(message);
     });
     getMessages();
 })

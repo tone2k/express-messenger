@@ -83,6 +83,8 @@ describe('/messages', function () {
             });
     });
 
+    // get post id and save for deleting. save as global variable to use in delete statement. 
+
     it('should delete message on DELETE', function () {
         return chai.request(app)
             .delete('/messages')
