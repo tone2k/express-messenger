@@ -1,12 +1,13 @@
 let socket = io();
 
 $(() => {
-    $('#send').click(() => {
+    $('#mainpage').submit((e) => {
+        e.preventDefault();
         const message = {
             name: $('#name').val(),
             message: $('#message').val()
         }
-        // $('#name').val('')
+        $('#name').val('')
         $('#message').val('')
         postMessages(message);
         console.log(message);
@@ -57,7 +58,8 @@ function postMessages(message) {
         type: 'POST',
         data: JSON.stringify(message),
         headers: {
-            "Authorization": 'Bearer ' + token
+            "Authorization": 'Bearer ' + token,
+            "Content-Type": "application/json"
         },
         dataType: 'JSON'
     })
@@ -158,7 +160,7 @@ $(document).on('submit', '#signup', function (e) {
     .done(() => {    
         $('#mainpage').hide();
         $('#signup').hide();
-        $('#login').show();    
+        $('#login').show();  
     })
     .fail(function (err) {
         console.log(err);
