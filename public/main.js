@@ -11,7 +11,7 @@ $(() => {
         $('#message').val('')
         postMessages(message);
     });
-    getMessages()
+    // getMessages()
 })
 
 socket.on('message', addMessages);
@@ -58,6 +58,7 @@ function getMessages() {
         data.forEach(addMessages);
     })
 }
+
 
 function postMessages(message) {
     let token = localStorage.getItem('authToken');
@@ -132,7 +133,9 @@ $(document).on('submit', '#login', function (e) {
         localStorage.setItem("currentUser", user.username);    
         $('#mainpage').show();
         $('#signup').hide();
-        $('#login').hide();    
+        $('#login').hide();
+        $('.error-message').hide();
+        getMessages();
     })
     .fail(function (err) {
         console.log(err);
