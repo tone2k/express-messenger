@@ -24,6 +24,7 @@
 <body>
     <div class="error-message"></div>
     <div id="content">
+        <a href=""><img id="info" src="info.png" alt="info logo" /></a>
         <img id="node" src="node.png" alt="node logo"/>
         <img id="socket" src="socket.png" alt="socket.io logo"/>
     </div>
@@ -42,7 +43,7 @@
             <button type="submit" id="send">Send</button>
         </form>
         <form id="login" class="login-form" action="/login/">
-            <div class="display-4">Log In</div>
+            <div class="display-4">Join the Convo!</div>
             <fieldset>
                 <div>
                     <label class="label" for="loginUsername">Username</label><br>
@@ -70,8 +71,37 @@
             </fieldset>
             <button id="signupBtn" type="submit">Sign Up</button>
         </form>
+        <form id="info-form" class="jumbotron">
+            <header class='masthead'>
+                <p class='display-4'>express</p>
+                <h1 class='display-4'>MESSENGER</h1>
+            </header>
+            <section class="introduction-section">
+                <h1>Introduction</h1>
+                <p>Express Messenger is a messaging application built using Node, Express, Socket.io, JWT Auth, and MongoDb.</p>
+                <p>Also a sprinkle of boostrap!</p>
+            </section>
+            <section class="location-section">
+                <h1>What does it do?</h1>
+                <p>It allows a user to Create an Account, Log into that Account and post Anonymous Messages out into the world. </p>
+            </section>
+            <section class="questions-section">
+                <h1>More About 'It'</h1>
+                <h2>Why does It do...it?</h2>
+                <p>It does it because it is good to express yourself! Also, Node and Express are good too so it works!</p>
+                <h2>How does it do it?</h2>
+                <p>The user accounts are created using JWT authentication tokens and stored to a database using MongoDB. The messages
+                    are pushed to web sessions using Socket.io with jQuery and server is running using Node and Express!</p>
+                <h2>What's next for it?</h2>
+                <p>I'm thinking to refine the CSS and remove Bootstrap completely. I want to tighten up the state management using React
+                    as well. </p>
+                <h2>...and actual features?</h2>
+                <p>Ah, yes! I want to bring in some animations, maybe some social media intergration and at one point GIF support. A
+                    bot would be pretty cool too. Thoughts?</p>
+            </section>
+        </form>
         <div id="messages" class="jumbotron">
-            <div id="express"><img src="express.png" class="express" alt="express yourself"></div>
+            <div id="express"><img src="express.png" alt="express yourself"></div>
         </div>
     </div>
 

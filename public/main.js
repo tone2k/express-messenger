@@ -10,7 +10,6 @@ $(() => {
         $('#name').val('')
         $('#message').val('')
         postMessages(message);
-        console.log(message);
     });
     getMessages();
 })
@@ -32,6 +31,15 @@ $(document).on('click', '.trash', function() {
     let id = $(this).parent().parent().attr('data-id')
     deleteMessage(id);
     getMessages();
+})
+
+$(document).on('click', '#info', function (e) {
+    $(".signup-form").hide();
+    $(".login-form").hide();
+    $("#mainpage").hide();
+    $("#info-form").show();
+    $('#messages').hide();
+    e.preventDefault();
 })
 
 function getMessages() {

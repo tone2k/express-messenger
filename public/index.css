@@ -172,7 +172,7 @@ p {
     -webkit-border-radius: 10px; */
     border-radius: 10px;
     border: 10px solid #0077C3;
-    margin-bottom: 5%;
+    margin-bottom: 8%;
 }
 
 .speech-bubble p {
@@ -199,10 +199,6 @@ p {
     top: -30px;
     z-index: 1;
     border-bottom-color: #0077C3;
-}
-
-#content {
-    position: relative;
 }
 
 #content #node {
@@ -252,4 +248,10 @@ p {
 
 #express {
     display: block;
+}
+
+#info {
+    float: left;
+    position: relative;
+    margin-left: 2%;
 }
