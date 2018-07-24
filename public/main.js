@@ -7,7 +7,7 @@ $(() => {
             name: $('#name').val(),
             message: $('#message').val()
         }
-        $('#name').val('')
+        // $('#name').val('')
         $('#message').val('')
         postMessages(message);
     });
