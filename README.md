@@ -13,19 +13,19 @@ Login Page:
 
 Signup Page:
 
-![Signup](screenshot2.png)
+![Signup](screenshot2b.png)
 
 About Page:
 
-![About](screenshot3.png)
+![About](screenshot3b.png)
 
 Compose Page:
 
-![compose](screenshot4.png)
+![compose](screenshot4b.png)
 
 Messages Page:
 
-![message](screenshot5.png)
+![message](screenshot5b.png)
 
 ## Summary & Technology Used
 
