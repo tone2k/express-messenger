@@ -11,7 +11,7 @@ $(() => {
         $('#message').val('')
         postMessages(message);
     });
-    getMessages();
+    getMessages()
 })
 
 socket.on('message', addMessages);
@@ -100,6 +100,7 @@ function loginUser() {
             'Content-Type': 'application/json'
         },
     });
+    
 }
 
 $("#newAcct").click(() => {

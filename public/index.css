@@ -126,7 +126,6 @@ p {
 }
 
 #messages {
-    display: none;
     text-align: center;
 }
 
@@ -143,6 +142,7 @@ p {
 .trash {
     float: right;
     height: 25px;
+    margin: 5px;
 }
 .edit {
     float: right;
@@ -247,11 +247,39 @@ p {
 }
 
 #express {
+    height: 200px;
     display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #info {
     float: left;
     position: relative;
     margin-left: 2%;
+}
+
+.headliner {
+    font-size: 50px;
+    text-align: center;
+
+}
+
+.nextliner {
+    font-size: 35px;
+    text-align: left;
+}
+
+.about-text {
+    font-size: 25px;
+    font-family: 'Gaegu',
+    cursive;
+}
+
+.about_text {
+    font-size: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-family: 'Gaegu',
+    cursive;
 }
