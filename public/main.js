@@ -177,7 +177,7 @@ $(document).on('submit', '#signup', function (e) {
     .fail(function (err) {
         console.log(err);
         if (err.status === 401) {
-            $('.error-message').html('Username and/or password incorrect');
+            $('.error-message').html('<b>Username and/or Password incorrect</b>');
         }
     });
 })

@@ -211,6 +211,7 @@ p {
 .signup-form {
     float: center;
     display: none;
+    margin-bottom: 25px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7),
     0 6px 20px 0 rgba(0, 0, 0, 0.68);
 }
@@ -218,6 +219,7 @@ p {
 .login-form{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7),
     0 6px 20px 0 rgba(0, 0, 0, 0.68);
+    margin-bottom: 25px;
 }
 
 #email, #password {
@@ -282,4 +284,11 @@ p {
     margin-right: 10px;
     font-family: 'Gaegu',
     cursive;
+}
+
+.error-message {
+    background-color: yellow;
+    font-size: 25px;
+    color: gray;
+    font-weight: bold;
 }
