@@ -73,7 +73,7 @@ describe('/messages', function () {
             .send(newMessage)
             .then(function (res) {
                 expect(res).to.have.status(201);
-                expect(res).to.be.array;
+                expect(res).to.be.param;
                 expect(res.body).to.be.a('object');
                 expect(res.body).to.include.keys('id', 'name', 'message');
                 expect(res.body.id).to.not.equal(null);
