@@ -7,7 +7,7 @@ $(() => {
             name: $('#name').val(),
             message: $('#message').val()
         }
-        // $('#name').val('')
+        $('#name').prop('readonly', true);
         $('#message').val('')
         postMessages(message);
     });
