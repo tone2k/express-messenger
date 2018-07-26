@@ -43,7 +43,7 @@ $(document).on('click', '#info', function (e) {
 })
 
 function getMessages() {
-    $('#messages').empty();
+    // $('#messages').empty();
     $('#messages').show();
     let token = localStorage.getItem('authToken');
     $.ajax({

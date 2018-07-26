@@ -94,6 +94,10 @@ img {
     height: 60px;
 }
 
+#expressImg {
+    height: 200px;
+}
+
 h4 {
     font-size: 30px;
     float: left;
