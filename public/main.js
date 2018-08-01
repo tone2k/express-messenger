@@ -1,5 +1,11 @@
+// Assigning variable socket to socket.io
 let socket = io();
 
+// Socket listener for adding messages and deleting
+socket.on('message', addMessages);
+socket.on('delete', getMessages);
+
+// Event listener for submit button on mainpage
 $(() => {
     $('#mainpage').submit((e) => {
         e.preventDefault();
@@ -14,25 +20,25 @@ $(() => {
     // getMessages()
 })
 
-socket.on('message', addMessages);
-socket.on('delete', getMessages);
-
+// Function that adds messages html to page
 function addMessages(message) {
     $('#messages').append(
         `<div data-id="${message._id}" class="speech-bubble">
             <h4> ${message.name} </h4> 
             <p><i>${message.message}</i>
-                <img data-id="test" src="trash.png" class="trash">
+                <img data-id="test" alt="trashcan" src="trash.png" class="trash">
             </p>
         <div>`)
 }
 
+// Event listener for trash can to call delete message function
 $(document).on('click', '.trash', function() {
     let id = $(this).parent().parent().attr('data-id')
     deleteMessage(id);
     getMessages();
 })
 
+// Event listener for information button to display page elements
 $(document).on('click', '#info', function (e) {
     $(".signup-form").hide();
     $(".login-form").hide();
@@ -42,8 +48,8 @@ $(document).on('click', '#info', function (e) {
     e.preventDefault();
 })
 
+// Function to send ajax using JWT to retrieve messages authenticated. 
 function getMessages() {
-    // $('#messages').empty();
     $('#messages').show();
     let token = localStorage.getItem('authToken');
     $.ajax({
@@ -59,7 +65,7 @@ function getMessages() {
     })
 }
 
-
+// function to send ajax using JWT to post messages authenticated.
 function postMessages(message) {
     let token = localStorage.getItem('authToken');
     $.ajax({
@@ -77,6 +83,7 @@ function postMessages(message) {
     })
 }
 
+// Function to send ajax using JWT to delete messages authenticated. 
 function deleteMessage(id) {
     let token = localStorage.getItem('authToken');
     $.ajax({
@@ -88,7 +95,7 @@ function deleteMessage(id) {
     })
 }
 
-
+// Function to validate user login using ajax post to auth route. 
 function loginUser() {
     let user = {};
     user.username = $('#loginUsername').val();
@@ -104,11 +111,13 @@ function loginUser() {
     
 }
 
+// Event listener to show signup page
 $("#newAcct").click(() => {
     $(".signup-form").show();
     $(".login-form").hide();
 })
 
+// Event listener to login user using ajax post to users auth route.
 $(document).on('submit', '#login', function (e) {
     e.preventDefault();
     // Store the user info 
@@ -146,6 +155,7 @@ $(document).on('submit', '#login', function (e) {
 
 })
 
+// Event listener to create user object and post to users auth route.
 $(document).on('submit', '#signup', function (e) {
     e.preventDefault();
     // Store the user info 

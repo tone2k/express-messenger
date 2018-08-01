@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Express Messenger</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
     <link rel="icon" href=”/favicon.png” type="image/png" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
         crossorigin="anonymous">
@@ -37,20 +36,20 @@
             <h1 class="display-4">Join The Convo!</h1>
         
             <label class="label">Who you are: </label><br>
-            <input id="name" class="form-control" placeholder="Sir Isaac Newton"> <br>
+                <input id="name" class="form-control" placeholder="Sir Isaac Newton"> <br>
             <lablel class="label">What you want to say:</lablel><br>
-            <textarea id="message" class="form-control" placeholder="Where did all the apple trees go?"></textarea>
-            <br>
-            <button type="submit" id="send">Send</button>
+                <textarea id="message" class="form-control" placeholder="Where did all the apple trees go?"></textarea>
+                <br>
+                <button type="submit" id="send">Send</button>
         </form>
         <form id="login" class="login-form" action="/login/">
         <div class="display-4">Express &nbsp; Messenger</div>
             <fieldset>
                 <div>
                     <label class="label" for="loginUsername">Username</label><br>
-                    <input id="loginUsername" type="email" name="email" placeholder="foo@bar.com" required><br>
+                        <input id="loginUsername" type="email" name="email" placeholder="foo@bar.com" required><br>
                     <label class="label" for="loginPassword">Password</label><br>
-                    <input id="loginPassword" type="password" name="password" placeholder='1234Passw0rd!' required>
+                        <input id="loginPassword" type="password" name="password" placeholder='1234Passw0rd!' required>
                 </div>
             </fieldset>
             <button id="loginBtn" type="submit">Login</button>
@@ -61,13 +60,13 @@
             <fieldset>
                 <div>
                     <legend for="signupFirstName">First Name</legend>
-                    <input id="signupFirstName" type="firstName" name="firstName" placeholder="Andrew" required>
+                        <input id="signupFirstName" type="firstName" name="firstName" placeholder="Andrew" required>
                     <legend for="signupLastName">Last Name</legend>
-                    <input id="signupLastName" type="lastName" name="lastName" placeholder="Jackson" required>
+                        <input id="signupLastName" type="lastName" name="lastName" placeholder="Jackson" required>
                     <legend for="signupUsername">Username</legend>
-                    <input id="signupUsername" type="email" name="email" placeholder="ajax@bar.com" required>
+                        <input id="signupUsername" type="email" name="email" placeholder="ajax@bar.com" required>
                     <legend for="signupPassword">Password</legend>
-                    <input id="signupPassword" type="password" name="password" placeholder='1234Passw0rd!' required>
+                        <input id="signupPassword" type="password" name="password" placeholder='1234Passw0rd!' required>
                 </div>
             </fieldset>
             <button id="signupBtn" type="submit">Sign Up</button>
@@ -105,11 +104,9 @@
             </section>
         </form>
         <div id="messages" class="jumbotron">
-            <div id="express"><img id="expressImg" src="express.png" alt="express yourself"></div>
+            <div><img id="expressImg" src="express.png" alt="express yourself"></div>
         </div>
     </div>
-
 </body>
 <script src="main.js"></script>
-
 </html>

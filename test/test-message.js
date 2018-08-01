@@ -8,7 +8,8 @@ const {JWT_SECRET} = require('../config');
 const {
     app,
     runServer,
-    closeServer
+    closeServer, 
+    Message
 } = require('../server');
 const {
     User
@@ -72,30 +73,29 @@ describe('/messages', function () {
             .set('authorization', `Bearer ${token}`)
             .send(newMessage)
             .then(function (res) {
+                console.log(res.body);
                 expect(res).to.have.status(201);
                 expect(res).to.be.param;
                 expect(res.body).to.be.a('object');
-                expect(res.body).to.include.keys('id', 'name', 'message');
-                expect(res.body.id).to.not.equal(null);
-                expect(res.body).to.deep.equal(Object.assign(newMessage, {
-                    id: res.body.id
-                }));
+                expect(res.body).to.include.keys('_id', 'name', 'message');
+                expect(res.body._id).to.not.equal(null);
             });
     });
 
-    // get post id and save for deleting. save as global variable to use in delete statement. 
+// get post id and save for deleting. save as global variable to use in delete statement. 
 
     it('should delete message on DELETE', function () {
+        let message;
+        Message.findOne().then(
+            _message => {
+                message = _message;
+                console.log("message", message)
+            });
         return chai.request(app)
-            .delete('/messages')
+            .delete(`/messages/${message._id}`)
             .set('authorization', `Bearer ${token}`)
-            .then(function (res) {
-                return chai.request(app)
-                    .delete(`/messages/${res.body[0].id}`);
-            })
             .then(function (res) {
                 expect(res).to.have.status(204);
             });
     });
-
 });

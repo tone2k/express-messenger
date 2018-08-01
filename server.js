@@ -80,30 +80,33 @@ app.get('/messages:user', jwtAuth, (req, res) => {
 
 app.post('/messages', jwtAuth, async (req, res) => {
 
-    try {
-        const message = new Message(req.body)
+    Message.create(req.body)
+        .then(message => res.status(201).json(message))
 
-        const savedMessage = await message.save()
+    // try {
+    //     const message = new Message(req.body)
 
-        console.log('saved')
+    //     const savedMessage = await message.save()
 
-        const censored = await Message.findOne({
-            message: 'badword'
-        })
-        if (censored)
-            await message.remove({
-                _id: censored.id
-            })
-        else
-            io.emit('message', req.body)
+    //     console.log('saved')
 
-        res.sendStatus(201)
-    } catch (error) {
-        res.sendStatus(500)
-        return console.error(error)
-    } finally {
+    //     const censored = await Message.findOne({
+    //         message: 'badword'
+    //     })
+    //     if (censored)
+    //         await message.remove({
+    //             _id: censored.id
+    //         })
+    //     else
+    //         io.emit('message', req.body)
 
-    }
+    //     res.sendStatus(201).json(message)
+    // } catch (error) {
+    //     res.sendStatus(500)
+    //     return console.error(error)
+    // } finally {
+
+    // }
 })
 
 app.delete('/messages/:id', jwtAuth, (req, res) => {
@@ -167,4 +170,4 @@ if (require.main === module) {
     runServer().catch(err => console.error(err));
 }
 
-module.exports = { app, runServer, closeServer };
+module.exports = { app, runServer, closeServer, Message };
