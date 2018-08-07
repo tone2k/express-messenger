@@ -22,7 +22,6 @@ $(() => {
 
 // Function that adds messages html to page
 function addMessages(message) {
-    getMessages();
     $('#messages').append(
         `<div data-id="${message._id}" class="speech-bubble">
             <h4> ${message.name} </h4> 
