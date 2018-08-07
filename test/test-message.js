@@ -4,6 +4,8 @@ const chai = require('chai');
 const chaiHttp = require('chai-http');
 const jwt = require('jsonwebtoken');
 const {JWT_SECRET} = require('../config');
+const testDataBase = 'mongodb://localhost/express-messenger-test';
+const mongoose = require('mongoose');
 
 const {
     app,
@@ -38,9 +40,23 @@ const token = jwt.sign({
 
 chai.use(chaiHttp);
 
+function tearDownDb() {
+    return new Promise((resolve, reject) =>{
+        mongoose.connection.dropDatabase()
+            .then(result => resolve(result))
+            .catch(err => reject(err))
+    });
+}
+
+
+
 describe('/messages', function () {
             before(function () {
-                return runServer();
+                return runServer(testDataBase);
+            });
+
+            afterEach(function() {
+                return tearDownDb();
             });
 
             after(function () {
@@ -85,17 +101,23 @@ describe('/messages', function () {
 // get post id and save for deleting. save as global variable to use in delete statement. 
 
     it('should delete message on DELETE', function () {
-        let message;
-        Message.findOne().then(
-            _message => {
-                message = _message;
-                console.log("message", message)
-            });
-        return chai.request(app)
-            .delete(`/messages/${message._id}`)
-            .set('authorization', `Bearer ${token}`)
-            .then(function (res) {
-                expect(res).to.have.status(204);
-            });
+        const newMessage = {
+            name: 'Jake',
+            message: 'The Earth is our home',
+        };
+        Message.create(newMessage).then(response => {
+            let message;
+            Message.findOne().then(
+                _message => {
+                    message = _message;
+                });
+            console.log("message", message)
+            return chai.request(app)
+                .delete(`/messages/${message._id}`)
+                .set('authorization', `Bearer ${token}`)
+                .then(function (res) {
+                    expect(res).to.have.status(204);
+                });
+        });
     });
 });

@@ -17,7 +17,7 @@ $(() => {
         $('#message').val('')
         postMessages(message);
     });
-    // getMessages()
+    getMessages()
 })
 
 // Function that adds messages html to page
@@ -61,6 +61,7 @@ function getMessages() {
         dataType: 'JSON'
     })
     .done(data => {
+        $('#messages').empty();
         data.forEach(addMessages);
     })
 }
