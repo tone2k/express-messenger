@@ -81,6 +81,7 @@ function postMessages(message) {
     })
     .done(data => {
         console.log(message);
+        addMessages(message);
     })
 }
 
