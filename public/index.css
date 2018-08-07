@@ -131,6 +131,7 @@ p {
 
 #messages {
     text-align: center;
+    display: none;
 }
 
 .message{

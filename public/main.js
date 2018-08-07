@@ -22,6 +22,7 @@ $(() => {
 
 // Function that adds messages html to page
 function addMessages(message) {
+    getMessages();
     $('#messages').append(
         `<div data-id="${message._id}" class="speech-bubble">
             <h4> ${message.name} </h4> 
@@ -50,7 +51,7 @@ $(document).on('click', '#info', function (e) {
 
 // Function to send ajax using JWT to retrieve messages authenticated. 
 function getMessages() {
-    $('#messages').show();
+    // $('#messages').show();
     let token = localStorage.getItem('authToken');
     $.ajax({
         url: '/messages',
@@ -62,6 +63,7 @@ function getMessages() {
     })
     .done(data => {
         $('#messages').empty();
+        // $('#messages').contents(':not(img)').remove();
         data.forEach(addMessages);
     })
 }
@@ -143,6 +145,7 @@ $(document).on('submit', '#login', function (e) {
         localStorage.setItem("authToken", token.authToken);
         localStorage.setItem("currentUser", user.username);    
         $('#mainpage').show();
+        $('#messages').show();
         $('#signup').hide();
         $('#login').hide();
         $('.error-message').hide();
