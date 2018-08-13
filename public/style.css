@@ -50,4 +50,14 @@
     .login-page, .signup-page {
         width: 50%;
     }
+    h4 {
+        margin-top: -30%;
+    }
+    i {
+        font-size: 30px;
+    }
+    #message {
+        height: 120px;
+        margin-bottom: 0;
+    }
 }
