@@ -62,7 +62,6 @@ function getMessages() {
     })
     .done(data => {
         $('#messages').empty();
-        // $('#messages').contents(':not(img)').remove();
         data.forEach(addMessages);
     })
 }
