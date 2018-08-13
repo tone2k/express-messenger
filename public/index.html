@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
         crossorigin="anonymous">
     <link href="index.css" rel="stylesheet" type="text/css" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
@@ -25,11 +26,11 @@
     <div class="error-message"></div>
     <div id="content">
         <a href=""><img id="info" src="info.png" alt="info logo" /></a>
-        <img id="node" src="node.png" alt="node logo"/>
-        <img id="socket" src="socket.png" alt="socket.io logo"/>
+        <img id="node" class="images" src="node.png" alt="node logo"/>
+        <img id="socket" class="images" src="socket.png" alt="socket.io logo"/>
     </div>
     <header role="banner">
-        <a href="/"><img src="chat1.png" class="logo" alt="Message Logo"></a>
+        <a href="/"><img src="chat1.png" id="chat" class="logo" alt="Message Logo"></a>
     </header>
     <div class="container">
         <form id="mainpage" class="jumbotron">
@@ -45,7 +46,7 @@
         <form id="login" class="login-form" action="/login/">
         <div class="display-4">Express &nbsp; Messenger</div>
             <fieldset>
-                <div>
+                <div class="login-page">
                     <label class="label" for="loginUsername">Email</label><br>
                         <input id="loginUsername" type="email" name="email" placeholder="foo@bar.com" required><br>
                     <label class="label" for="loginPassword">Password</label><br>
@@ -58,7 +59,7 @@
         <form id="signup" class="signup-form" action="/signup/">
             <div class="display-4">Sign Up</div>
             <fieldset>
-                <div>
+                <div class="signup-page">
                     <legend for="signupFirstName">First Name</legend>
                         <input id="signupFirstName" type="firstName" name="firstName" placeholder="Andrew" required>
                     <legend for="signupLastName">Last Name</legend>
